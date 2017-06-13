@@ -36,11 +36,6 @@ module.exports = (function() {
         return currencyA.toLowerCase()  + currencyB.toLowerCase();
     }
 
-    function sortParameters(a, b){return 0;
-        // Sort `nonce` parameter last, and the rest alphabetically
-        return a === 'nonce' || a > b ? 1 : -1;
-    }
-
     function cleanUpParam(param){
         for (var key in param){
             if(param[key] == null)
@@ -100,6 +95,9 @@ module.exports = (function() {
                 // Empty response
                 if (!err && (typeof body === 'undefined' || body === null)){
                     err = 'Empty response';
+                }
+                if (typeof body === 'string') {
+                    body = JSON.parse(body);
                 }
 
                 callback(err, body);
