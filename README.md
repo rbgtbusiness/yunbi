@@ -7,8 +7,12 @@ Open source developed Nodejs API for the exchange market www.yunbi.com
 - Include most of Yunbi API except for placing multiple orders.
 
  ## Usage :
+
+ ```sh
+ npm i yunbi-api-v2 --save
+ ```
  
- - var Client = require('yunbi-module.js');
+ - var Client = require('yunbi-api-v2');
 
  - var client = new Client ( ACCESS_KEY, SECRET_KEY );
 
