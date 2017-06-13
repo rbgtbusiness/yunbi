@@ -93,14 +93,21 @@ module.exports = (function() {
         _request: function(options, callback){
             request(options, function(err, response, body) {
                 // Empty response
+                var error = null;
                 if (!err && (typeof body === 'undefined' || body === null)){
                     err = 'Empty response';
+                    error = new Error(err);
                 }
                 if (typeof body === 'string') {
-                    body = JSON.parse(body);
+                    try {
+                        body = JSON.parse(body);
+                    }
+                    catch (e) {
+                        error = e;
+                    }
                 }
 
-                callback(err, body);
+                callback(error, body);
             });
 
             return this;

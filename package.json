@@ -1,6 +1,6 @@
 {
   "name": "yunbi-api-v2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "yunbi-module.js",
   "repository": "https://github.com/geeeger/yunbi.git",
   "author": "geeebro <djmax256081@163.com>",
