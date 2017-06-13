@@ -350,7 +350,7 @@ module.exports = (function() {
                 order_by : Orderby  ? Orderby : "desc"
             }
             cleanUpParam(param);
-            return this._privateGet("/trades.json",param,callback);
+            return this._public("/trades.json",param,callback);
         },
         getMyTrades :  function(currencyA, currencyB, mLimit, Timestamp, From, To, Orderby,callback){
             if(!currencyA || !currencyB){
